@@ -1,22 +1,22 @@
 import pkg from './package.json';
-import { terser } from 'rollup-plugin-terser';
 
 var banner =
   '/* @preserve\n' +
-  ' * Leaflet Control Geocoder ' +
+  ' * Leaflet Control Textinput ' +
   pkg.version +
   '\n' +
-  ' * https://github.com/perliedman/leaflet-control-geocoder\n' +
+  ' * https://github.com/perliedman/leaflet-control-textinput\n' +
   ' *\n' +
   ' * Copyright (c) 2012 sa3m (https://github.com/sa3m)\n' +
   ' * Copyright (c) 2018 Per Liedman\n' +
+  ' * Copyright (c) 2020 Andeas Schrell\n' +
   ' * All rights reserved.\n' +
   ' */\n';
 
 var output = {
-  file: 'dist/Control.Geocoder.js',
+  file: 'dist/Control.Textinput.js',
   format: 'iife',
-  name: 'L.Control.Geocoder',
+  name: 'L.Control.Textinput',
   sourcemap: true,
   globals: {
     leaflet: 'L'
@@ -30,8 +30,8 @@ export default {
   output: [
     output,
     Object.assign({}, output, {
-      file: 'dist/Control.Geocoder.min.js',
-      plugins: [terser()]
+      file: 'dist/Control.Textinput.min.js',
+      plugins: []
     })
   ]
 };

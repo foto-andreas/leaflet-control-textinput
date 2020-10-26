@@ -1,11 +1,10 @@
 import L from 'leaflet';
-import { Geocoder, geocoder } from './control';
-import * as geocoders from './geocoders/index';
+import { Textinput, textinput } from './control';
 
-L.Util.extend(Geocoder, geocoders);
-export default Geocoder;
+L.Util.extend(Textinput);
+export default Textinput;
 
 L.Util.extend(L.Control, {
-  Geocoder: Geocoder,
-  geocoder: geocoder
+  Textinput: Textinput,
+  textinput: textinput
 });

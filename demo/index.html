@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Leaflet Control Geocoder</title>
+    <title>Leaflet Control Textinput</title>
 
     <meta charset="utf-8" />
     <meta
@@ -10,10 +10,10 @@
     />
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@latest/dist/leaflet.css" />
-    <link rel="stylesheet" href="../dist/Control.Geocoder.css" />
+    <link rel="stylesheet" href="../dist/Control.Textinput.css" />
 
     <script src="https://unpkg.com/leaflet@latest/dist/leaflet-src.js"></script>
-    <script src="../dist/Control.Geocoder.js"></script>
+    <script src="../dist/Control.Textinput.js"></script>
     <style type="text/css">
       body {
         margin: 0;
@@ -31,23 +31,9 @@
     <script type="text/javascript">
       var map = L.map('map').setView([0, 0], 2);
 
-      var geocoder = L.Control.Geocoder.nominatim();
-      if (URLSearchParams && location.search) {
-        // parse /?geocoder=nominatim from URL
-        var params = new URLSearchParams(location.search);
-        var geocoderString = params.get('geocoder');
-        if (geocoderString && L.Control.Geocoder[geocoderString]) {
-          console.log('Using geocoder', geocoderString);
-          geocoder = L.Control.Geocoder[geocoderString]();
-        } else if (geocoderString) {
-          console.warn('Unsupported geocoder', geocoderString);
-        }
-      }
-
-      var control = L.Control.geocoder({
-        query: 'Moon',
-        placeholder: 'Search here...',
-        geocoder: geocoder
+      var control = L.Control.textinput({
+        query: '',
+        placeholder: 'type your URL...'
       }).addTo(map);
       var marker;
 
@@ -59,24 +45,6 @@
         attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(map);
 
-      map.on('click', function(e) {
-        geocoder.reverse(e.latlng, map.options.crs.scale(map.getZoom()), function(results) {
-          var r = results[0];
-          if (r) {
-            if (marker) {
-              marker
-                .setLatLng(r.center)
-                .setPopupContent(r.html || r.name)
-                .openPopup();
-            } else {
-              marker = L.marker(r.center)
-                .bindPopup(r.name)
-                .addTo(map)
-                .openPopup();
-            }
-          }
-        });
-      });
     </script>
   </body>
 </html>

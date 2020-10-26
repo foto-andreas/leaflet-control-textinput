@@ -1,0 +1,131 @@
+.leaflet-control-textinput {
+  border-radius: 4px;
+  background: white;
+  min-width: 26px;
+  min-height: 26px;
+}
+
+.leaflet-touch .leaflet-control-textinput {
+  min-width: 30px;
+  min-height: 30px;
+}
+
+.leaflet-control-textinput a,
+.leaflet-control-textinput .leaflet-control-textinput-icon {
+  border-bottom: none;
+  display: inline-block;
+}
+
+.leaflet-control-textinput .leaflet-control-textinput-alternatives a {
+  width: inherit;
+  height: inherit;
+  line-height: inherit;
+}
+
+.leaflet-control-textinput a:hover,
+.leaflet-control-textinput .leaflet-control-textinput-icon:hover {
+  border-bottom: none;
+  display: inline-block;
+}
+
+.leaflet-control-textinput-form {
+  display: none;
+  vertical-align: middle;
+}
+
+.leaflet-control-textinput-expanded .leaflet-control-textinput-form {
+  display: inline-block;
+}
+
+.leaflet-control-textinput-form input {
+  font-size: 120%;
+  border: 0;
+  background-color: transparent;
+  width: 246px;
+}
+
+.leaflet-control-textinput-icon {
+  border-radius: 4px;
+  width: 26px;
+  height: 26px;
+  border: none;
+  background-color: white;
+  background-image: url(images/textinput.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.leaflet-touch .leaflet-control-textinput-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.leaflet-control-textinput-throbber .leaflet-control-textinput-icon {
+  background-image: url(images/textinput.png);
+}
+
+.leaflet-control-textinput-form-no-error {
+  display: none;
+}
+
+.leaflet-control-textinput-form input:focus {
+  outline: none;
+}
+
+.leaflet-control-textinput-form button {
+  display: none;
+}
+
+.leaflet-control-textinput-error {
+  margin-top: 8px;
+  margin-left: 8px;
+  display: block;
+  color: #444;
+}
+
+.leaflet-control-textinput-alternatives {
+  display: block;
+  width: 272px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.leaflet-control-textinput-alternatives-minimized {
+  display: none;
+  height: 0;
+}
+
+.leaflet-control-textinput-alternatives li {
+  white-space: nowrap;
+  display: block;
+  overflow: hidden;
+  padding: 5px 8px;
+  text-overflow: ellipsis;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.leaflet-control-textinput-alternatives li a,
+.leaflet-control-textinput-alternatives li a:hover {
+  width: inherit;
+  height: inherit;
+  line-height: inherit;
+  background: inherit;
+  border-radius: inherit;
+  text-align: left;
+}
+
+.leaflet-control-textinput-alternatives li:last-child {
+  border-bottom: none;
+}
+
+.leaflet-control-textinput-alternatives li:hover,
+.leaflet-control-textinput-selected {
+  background-color: #f5f5f5;
+}
+
+.leaflet-control-textinput-address-context {
+  color: #666;
+}
